@@ -6,9 +6,9 @@ class DisjointSetUnion:
 
     def find(self, a):
         acopy = a
-        while a != self.parent[a]:
+        while a != self.parent[a]: #Find the ultimate parent of a
             a = self.parent[a]
-        while acopy != a:
+        while acopy != a: # Update the ultimate parents to all the visited nodes in the path
             self.parent[acopy], acopy = a, self.parent[acopy]
         return a
 
